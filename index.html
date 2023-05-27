@@ -1,137 +1,51 @@
-<!doctype html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script type="text/javascript" src="../../turn.min.js"></script>
-
-  <style type="text/css">
-    body {
-      background: #4f64a8;
-      margin: 0;
-      text-align: center;
-      color: white;
-    }
-
-    #container {
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    #magazine {
-      width: 100%;
-      max-width: 1152px;
-      height: auto;
-      margin: 0 auto;
-    }
-
-    #magazine .turn-page {
-      background-color: #fff;
-      background-size: 100% 100%;
-    }
-
-    /* Custom styles for buttons and navigation bar */
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: blue;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 10px;
-    }
-
-    .navbar {
-      background-color: rgb(172, 172, 226);
-      padding: 10px 0;
-    }
-
-    .navbar ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    .navbar li {
-      display: inline-block;
-    }
-
-    .navbar li a {
-      display: block;
-      padding: 10px 20px;
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .navbar li a:hover {
-      background-color: #fff;
-      color: rgb(0, 0, 0);
-    }
-
-    /* Media queries for responsive layout */
-    @media (max-width: 1152px) {
-      #magazine {
-        padding: 0 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 24px;
-      }
-    }
-  </style>
-</head>
 <body>
-  <title>Mariluz Party Rentals</title>
-  <h1>Mariluz Party Rentals</h1>
+	<title>Mariluz Party Rentals</title>
+	<h1>Mariluz Party Rentals</h1>
 
-  <div class="navbar">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
-  <div id="container">
-    <div id="magazine">
-      <div style="background-image:url(pages/01.jpg);"></div>
-      <div style="background-image:url(pages/02.jpg);"></div>
-      <div style="background-image:url(pages/03.jpg);"></div>
-      <div style="background-image:url(pages/04.jpg);"></div>
-      <div style="background-image:url(pages/05.jpg);"></div>
-      <div style="background-image:url(pages/06.jpg);"></div>
-    </div>
+<div class="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+<div id="container">
+<div id="magazine">
+  <div style="background-image:url(pages/01.jpg);"></div>
+  <div style="background-image:url(pages/02.jpg);"></div>
+  <div style="background-image:url(pages/03.jpg);"></div>
+  <div style="background-image:url(pages/04.jpg);"></div>
+  <div style="background-image:url(pages/05.jpg);"></div>
+  <div style="background-image:url(pages/06.jpg);"></div>
+</div>
 
-    <a href="tel:+18189269540" class="button">Book Now</a>
-  </div>
+<a href="tel:+18189269540" class="button">Book Now</a>
+</div>
 
-  <script type="text/javascript">
-    $(window).ready(function() {
-      $('#magazine').turn({
-        display: 'double',
-        acceleration: true,
-        gradients: !$.isTouch,
-        elevation: 50,
-        when: {
-          turned: function(e, page) {
-            /*console.log('Current view: ', $(this).turn('view'));*/
-          }
+
+<script type="text/javascript">
+  $(window).ready(function() {
+    $('#magazine').turn({
+      display: 'double',
+      acceleration: true,
+      gradients: !$.isTouch,
+      elevation: 50,
+      when: {
+        turned: function(e, page) {
+          /*console.log('Current view: ', $(this).turn('view'));*/
         }
-      });
+      }
     });
+  });
 
-    $(window).bind('keydown', function(e) {
-      if (e.keyCode == 37)
-        $('#magazine').turn('previous');
-      else if (e.keyCode == 39)
-        $('#magazine').turn('next');
-    });
-  </script>
+  $(window).bind('keydown', function(e) {
+    if (e.keyCode == 37)
+      $('#magazine').turn('previous');
+    else if (e.keyCode == 39)
+      $('#magazine').turn('next');
+  });
+</script>
 
 </body>
 </html>
