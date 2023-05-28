@@ -43,6 +43,7 @@ body{
 	color: #00f; /* Set color of the title to blue */
 	margin-bottom: 20px;
 	text-align: center;
+	font-family: 'Pacifico', cursive; /* Apply the 'Pacifico' font */
 }
 
 #magazine{
@@ -67,6 +68,16 @@ body{
 	max-height: 100%;
 	object-fit: contain;
 }
+
+.backdrop-text {
+	position: absolute;
+	top: 20px;
+	right: auto;
+	color: #000;
+	font-size: 18px;
+	font-weight: bold;
+}
+
 </style>
 </head>
 <body>
@@ -81,23 +92,28 @@ body{
 
 	<div id="magazine">
 		<div class="magazine-content">
-			<img src="pages/01.jpg" alt="Page 1"> 
-			
+			<img src="pages/01.jpg" alt="Page 1">
+			<div class="backdrop-text">Backdrops</div>
 		</div>
 		<div class="magazine-content">
 			<img src="pages/02.jpg" alt="Page 2">
+			<div class="backdrop-text">Balloon Garlands</div>
 		</div>
 		<div class="magazine-content">
 			<img src="pages/03.jpg" alt="Page 3">
+			<div class="backdrop-text">Flower Decor</div>
 		</div>
 		<div class="magazine-content">
 			<img src="pages/04.jpg" alt="Page 4">
+			<div class="backdrop-text">Candy Props</div>
 		</div>
 		<div class="magazine-content">
 			<img src="pages/05.jpg" alt="Page 5">
+			<div class="backdrop-text">Corporate Events</div>
 		</div>
 		<div class="magazine-content">
 			<img src="pages/06.jpg" alt="Page 6">
+			<div class="backdrop-text">Custom Decor</div>
 		</div>
 	</div>
 </div>
@@ -127,6 +143,3 @@ body{
 
 </body>
 </html>
-
-
-
