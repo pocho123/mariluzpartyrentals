@@ -1,51 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../../turn.min.js"></script>
+
+<style type="text/css">
+body{
+	background: #fff; /* Set background color to white */
+}
+
+.container {
+	background: #e9e4e4; /* Set background color of the container to black */
+	margin: 0 auto;
+	padding: 20px;
+	width: 1152px;
+}
+
+.navbar {
+	background: rgb(117, 117, 192); /* Set background color of the navigation bar to blue */
+	padding: 10px;
+	border-radius: 30px; /* Add border radius to create a wavy pattern */
+	display: inline-block;
+	
+}
+
+.navbar a {
+	color: #fff; /* Set text color of the navigation links to white */
+	margin-right: 10px;
+	text-decoration: none;
+	transition: color 0.3s ease; /* Add transition effect for color change */
+	
+}
+
+.navbar a:hover {
+	color: rgb(19, 74, 177); /* Change text color on hover to red */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add box shadow on hover */
+}
+
+.title {
+	font-size: 24px;
+	font-weight: bold;
+	color: #00f; /* Set color of the title to blue */
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#magazine{
+	width: 1152px;
+	height: 752px;
+}
+
+#magazine .turn-page{
+	background-color: #ccc;
+	background-size: 100% 100%;
+}
+
+.magazine-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.magazine-content img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+</style>
+</head>
 <body>
-	<title>Mariluz Party Rentals</title>
-	<h1>Mariluz Party Rentals</h1>
 
-<div class="navbar">
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Products</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</div>
-<div id="container">
-<div id="magazine">
-  <div style="background-image:url(pages/01.jpg);"></div>
-  <div style="background-image:url(pages/02.jpg);"></div>
-  <div style="background-image:url(pages/03.jpg);"></div>
-  <div style="background-image:url(pages/04.jpg);"></div>
-  <div style="background-image:url(pages/05.jpg);"></div>
-  <div style="background-image:url(pages/06.jpg);"></div>
-</div>
+<div class="container">
+	<div class="navbar">
+		<a href="#">Home</a>
+		<a href="#">Contact</a>
+	</div>
 
-<a href="tel:+18189269540" class="button">Book Now</a>
-</div>
+	<h1 class="title">Mariluz Party Rentals</h1>
 
+	<div id="magazine">
+		<div class="magazine-content">
+			<img src="pages/01.jpg" alt="Page 1"> 
+			
+		</div>
+		<div class="magazine-content">
+			<img src="pages/02.jpg" alt="Page 2">
+		</div>
+		<div class="magazine-content">
+			<img src="pages/03.jpg" alt="Page 3">
+		</div>
+		<div class="magazine-content">
+			<img src="pages/04.jpg" alt="Page 4">
+		</div>
+		<div class="magazine-content">
+			<img src="pages/05.jpg" alt="Page 5">
+		</div>
+		<div class="magazine-content">
+			<img src="pages/06.jpg" alt="Page 6">
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
-  $(window).ready(function() {
-    $('#magazine').turn({
-      display: 'double',
-      acceleration: true,
-      gradients: !$.isTouch,
-      elevation: 50,
-      when: {
-        turned: function(e, page) {
-          /*console.log('Current view: ', $(this).turn('view'));*/
-        }
-      }
-    });
-  });
-
-  $(window).bind('keydown', function(e) {
-    if (e.keyCode == 37)
-      $('#magazine').turn('previous');
-    else if (e.keyCode == 39)
-      $('#magazine').turn('next');
-  });
+	$(window).ready(function() {
+		$('#magazine').turn({
+			display: 'double',
+			acceleration: true,
+			gradients: !$.isTouch,
+			elevation: 50,
+			when: {
+				turned: function(e, page) {
+					/*console.log('Current view: ', $(this).turn('view'));*/
+				}
+			}
+		});
+	});
+	
+	$(window).bind('keydown', function(e){
+		if (e.keyCode == 37)
+			$('#magazine').turn('previous');
+		else if (e.keyCode == 39)
+			$('#magazine').turn('next');
+	});
 </script>
 
 </body>
 </html>
+
+
+
